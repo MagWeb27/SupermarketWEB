@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\SupermarketWeb.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\auxti3-co\\OneDrive - Gastronomía Italiana en Colombia SAS\\Escritorio\\Me\\C#\\SupermarketWeb\\wwwroot\\Resources\\logo_vertical.png",
+      "PackagePath": "staticwebassets\\Resources\\logo_vertical.png"
+    },
+    {
       "Id": "C:\\Users\\auxti3-co\\OneDrive - Gastronomía Italiana en Colombia SAS\\Escritorio\\Me\\C#\\SupermarketWeb\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

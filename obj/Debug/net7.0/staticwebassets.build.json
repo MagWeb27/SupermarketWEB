@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bju4FW8XzRvHDgxLg6FS0qsipSJl0Ron1elKNXAXVTA=",
+  "Hash": "5WsQ38jhZNnzxA6PcF0CRgRNlrwuDPytb5AsjdhjB4c=",
   "Source": "SupermarketWeb",
   "BasePath": "_content/SupermarketWeb",
   "Mode": "Default",
@@ -1069,6 +1069,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\auxti3-co\\OneDrive - Gastronomía Italiana en Colombia SAS\\Escritorio\\Me\\C#\\SupermarketWeb\\wwwroot\\Resources\\logo_vertical.png",
+      "SourceId": "SupermarketWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\auxti3-co\\OneDrive - Gastronomía Italiana en Colombia SAS\\Escritorio\\Me\\C#\\SupermarketWeb\\wwwroot\\",
+      "BasePath": "_content/SupermarketWeb",
+      "RelativePath": "Resources/logo_vertical.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\logo_vertical.png"
     }
   ]
 }
