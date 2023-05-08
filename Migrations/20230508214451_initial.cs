@@ -72,25 +72,22 @@ namespace SupermarketWeb.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Invoices",
+                name: "Providers",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Number = table.Column<int>(type: "int", nullable: false),
-                    ProviderId = table.Column<int>(type: "int", nullable: false),
-                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PayModeId = table.Column<int>(type: "int", nullable: false),
-                    DetailId = table.Column<int>(type: "int", nullable: true)
+                    Document_Number = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    First_Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Last_Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Birthday = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Phone_Number = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Invoices", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Invoices_Details_DetailId",
-                        column: x => x.DetailId,
-                        principalTable: "Details",
-                        principalColumn: "Id");
+                    table.PrimaryKey("PK_Providers", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -113,6 +110,34 @@ namespace SupermarketWeb.Migrations
                         name: "FK_CategoryProduct_Products_ProductsId",
                         column: x => x.ProductsId,
                         principalTable: "Products",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Invoices",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Number = table.Column<int>(type: "int", nullable: false),
+                    ProviderId = table.Column<int>(type: "int", nullable: false),
+                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    PayModeId = table.Column<int>(type: "int", nullable: false),
+                    DetailId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Invoices", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Invoices_Details_DetailId",
+                        column: x => x.DetailId,
+                        principalTable: "Details",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Invoices_Providers_ProviderId",
+                        column: x => x.ProviderId,
+                        principalTable: "Providers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -155,6 +180,11 @@ namespace SupermarketWeb.Migrations
                 name: "IX_Invoices_DetailId",
                 table: "Invoices",
                 column: "DetailId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Invoices_ProviderId",
+                table: "Invoices",
+                column: "ProviderId");
         }
 
         /// <inheritdoc />
@@ -180,6 +210,9 @@ namespace SupermarketWeb.Migrations
 
             migrationBuilder.DropTable(
                 name: "Details");
+
+            migrationBuilder.DropTable(
+                name: "Providers");
         }
     }
 }

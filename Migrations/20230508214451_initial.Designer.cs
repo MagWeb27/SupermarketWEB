@@ -12,7 +12,7 @@ using SupermarketWeb.Data;
 namespace SupermarketWeb.Migrations
 {
     [DbContext(typeof(SupermarketContext))]
-    [Migration("20230508181334_initial")]
+    [Migration("20230508214451_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -127,6 +127,8 @@ namespace SupermarketWeb.Migrations
 
                     b.HasIndex("DetailId");
 
+                    b.HasIndex("ProviderId");
+
                     b.ToTable("Invoices");
                 });
 
@@ -177,6 +179,46 @@ namespace SupermarketWeb.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("SupermarketWeb.Models.Provider", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Birthday")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Document_Number")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("First_Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Last_Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone_Number")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Providers");
+                });
+
             modelBuilder.Entity("CategoryProduct", b =>
                 {
                     b.HasOne("SupermarketWeb.Models.Category", null)
@@ -212,9 +254,20 @@ namespace SupermarketWeb.Migrations
                     b.HasOne("SupermarketWeb.Models.Detail", null)
                         .WithMany("Invoices")
                         .HasForeignKey("DetailId");
+
+                    b.HasOne("SupermarketWeb.Models.Provider", null)
+                        .WithMany("Invoices")
+                        .HasForeignKey("ProviderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("SupermarketWeb.Models.Detail", b =>
+                {
+                    b.Navigation("Invoices");
+                });
+
+            modelBuilder.Entity("SupermarketWeb.Models.Provider", b =>
                 {
                     b.Navigation("Invoices");
                 });

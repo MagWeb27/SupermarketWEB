@@ -9,5 +9,6 @@
         public int PayModeId { get; set; }
 
         public ICollection<PayMode>? PayModes { get; set; } = default!;
+        
     }
 }
