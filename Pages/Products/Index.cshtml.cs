@@ -17,6 +17,11 @@ namespace SupermarketWeb.Pages.Products
 
         public IList<Product> Products { get; set; } = default!;
 
+        private IActionResult Ok(List<Product> productList)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task OnGetAsync()
         {
             if (_context.Products != null)
