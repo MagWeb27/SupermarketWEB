@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5WsQ38jhZNnzxA6PcF0CRgRNlrwuDPytb5AsjdhjB4c=",
+  "Hash": "k7G6zGMVbpsDpg7cRvmGRpUF/OnMz4Rq3O9YwLJR2sY=",
   "Source": "SupermarketWeb",
   "BasePath": "_content/SupermarketWeb",
   "Mode": "Default",
@@ -1086,6 +1086,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Resources\\logo_vertical.png"
+    },
+    {
+      "Identity": "C:\\Users\\auxti3-co\\OneDrive - Gastronomía Italiana en Colombia SAS\\Escritorio\\Me\\C#\\SupermarketWeb\\wwwroot\\Resources\\supermarket-grocery-logo-design-template-e43b99901aa11fad8aa024c3a84b0d2f_screen.jpg",
+      "SourceId": "SupermarketWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\auxti3-co\\OneDrive - Gastronomía Italiana en Colombia SAS\\Escritorio\\Me\\C#\\SupermarketWeb\\wwwroot\\",
+      "BasePath": "_content/SupermarketWeb",
+      "RelativePath": "Resources/supermarket-grocery-logo-design-template-e43b99901aa11fad8aa024c3a84b0d2f_screen.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\supermarket-grocery-logo-design-template-e43b99901aa11fad8aa024c3a84b0d2f_screen.jpg"
     }
   ]
 }

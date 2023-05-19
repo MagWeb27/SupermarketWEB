@@ -3,13 +3,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using SupermarketWeb.Data;
 using SupermarketWeb.Models;
 
-namespace SupermarketWeb.Pages.Products
+namespace SupermarketWeb.Pages.Account
 {
-    public class CreateModel : PageModel
+    public class RegisterModel : PageModel
     {
         private readonly SupermarketContext _context;
 
-        public CreateModel(SupermarketContext context)
+        public RegisterModel(SupermarketContext context)
         {
             _context = context;
         }
@@ -21,19 +21,18 @@ namespace SupermarketWeb.Pages.Products
 
         [BindProperty]
 
-        public Product Product { get; set; } = default!;
+        public User User { get; set; } = default!;
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid || _context.Products == null || Product == null)
+            if (!ModelState.IsValid || _context.Users == null || User == null)
             {
                 return Page();
             }
 
-            _context.Products.Add(Product);
+            _context.Users.Add(User);
             await _context.SaveChangesAsync();
             return RedirectToPage("./Index");
         }
-
     }
 }

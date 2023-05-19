@@ -10,6 +10,8 @@ a.navbar-brand[b-miknugl592] {
 
 a[b-miknugl592] {
   color: #0077cc;
+  display: block;
+  padding: 10px;
 }
 
 .btn-primary[b-miknugl592] {
@@ -46,4 +48,11 @@ button.accept-policy[b-miknugl592] {
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
+}
+
+#Account[b-miknugl592] {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }

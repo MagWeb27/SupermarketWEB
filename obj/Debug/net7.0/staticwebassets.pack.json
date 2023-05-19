@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\Resources\\logo_vertical.png"
     },
     {
+      "Id": "C:\\Users\\auxti3-co\\OneDrive - Gastronomía Italiana en Colombia SAS\\Escritorio\\Me\\C#\\SupermarketWeb\\wwwroot\\Resources\\supermarket-grocery-logo-design-template-e43b99901aa11fad8aa024c3a84b0d2f_screen.jpg",
+      "PackagePath": "staticwebassets\\Resources\\supermarket-grocery-logo-design-template-e43b99901aa11fad8aa024c3a84b0d2f_screen.jpg"
+    },
+    {
       "Id": "C:\\Users\\auxti3-co\\OneDrive - Gastronomía Italiana en Colombia SAS\\Escritorio\\Me\\C#\\SupermarketWeb\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

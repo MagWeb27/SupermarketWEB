@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Identity.Client;
 using System.Reflection.Metadata.Ecma335;
+using Microsoft.JSInterop;
 
 namespace SupermarketWeb.Pages.Sales
 {
@@ -36,6 +37,24 @@ namespace SupermarketWeb.Pages.Sales
             Products = await products.ToListAsync();
 
             
+        }
+
+        
+
+        public class Sales
+        {
+            public List<Product> ProductList { get; set; }
+
+            public Sales()
+            {
+                ProductList = new List<Product>();
+            }
+
+            [JSInvokable]
+            public void AddProduct()
+            {
+                ProductList.Add(new Product());
+            }
         }
     }
 }
