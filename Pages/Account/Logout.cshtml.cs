@@ -9,7 +9,7 @@ namespace SupermarketWeb.Pages.Account
         public async Task<IActionResult> OnPostAsync()
         {
             await HttpContext.SignOutAsync("MyCookieAuth");
-            return RedirectToPage("./Index");
+            return RedirectToPage("../Index");
         } 
     }
 }

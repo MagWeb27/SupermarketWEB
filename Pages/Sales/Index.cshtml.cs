@@ -1,15 +1,15 @@
-using Microsoft.AspNetCore.Mvc;
+
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SupermarketWeb.Models;
 using SupermarketWeb.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Identity.Client;
-using System.Reflection.Metadata.Ecma335;
+
 using Microsoft.JSInterop;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SupermarketWeb.Pages.Sales
 {
+    [Authorize]
     public class SalesModel : PageModel
     {
         private readonly SupermarketContext _context;
@@ -23,9 +23,6 @@ namespace SupermarketWeb.Pages.Sales
         
         public async Task OnGetAsync(string searchString)
         {
-
-
-            
             var products = from p in _context.Products
                            select p;
 

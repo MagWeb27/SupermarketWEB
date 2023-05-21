@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
+using SupermarketWeb.Data;
 using SupermarketWeb.Models;
 using System.Security.Claims;
 
@@ -11,16 +13,24 @@ namespace SupermarketWeb.Pages.Account
         [BindProperty]
 
         public User User { get; set; }
-        public void OnGet()
-        {
 
+        private readonly SupermarketContext _context;
+
+        public LoginModel(SupermarketContext context)
+        {
+            _context = context;
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid) return Page();
 
-            if (User.Email == User.Email && User.Password == User.Password)
+            var findUser = await _context.Users
+                .Where(x=> x.Email == User.Email && x.Password == User.Password)
+                .FirstOrDefaultAsync();
+
+            
+            if(findUser != null)
             {
                 var claims = new List<Claim>
                 {
@@ -33,10 +43,15 @@ namespace SupermarketWeb.Pages.Account
                 ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(identity);
 
                 await HttpContext.SignInAsync("MyCookieAuth", claimsPrincipal);
-                return RedirectToPage("/Index");
+                RedirectToPage("/Index");
+            }
+            else
+            {
+                Redirect("/Login");
             }
 
             return Page();
         }
+
     }
 }

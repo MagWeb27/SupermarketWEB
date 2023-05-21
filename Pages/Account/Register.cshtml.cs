@@ -32,7 +32,7 @@ namespace SupermarketWeb.Pages.Account
 
             _context.Users.Add(User);
             await _context.SaveChangesAsync();
-            return RedirectToPage("./Index");
+            return RedirectToPage("../Index");
         }
     }
 }
